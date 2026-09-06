@@ -14,6 +14,7 @@ import {
 import { useUpvotes } from "@/hooks/useUpvotes";
 import { useSubmissions } from "@/hooks/useSubmissions";
 import { cn } from "@/lib/utils";
+import { SITE } from "@/data/site";
 
 const PAGE_TITLE = `SPC Roadmap | ${SITE.name}`;
 const PAGE_DESC = `Suivi public des développements, jalons et versions de l'écosystème ${SITE.name}.`;
