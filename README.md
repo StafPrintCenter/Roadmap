@@ -1,126 +1,99 @@
-# SPC Progress Hub
+# STAF PRINT CENTER - Plateforme Web (V1)
 
-# PROMPT : DEVELOPPEMENT DE LA PLATEFORME "SPC ROADMAP" (`roadmap.stafprint.com`)
+Ce dépôt contient le code source de la plateforme web officielle de **STAF PRINT CENTER** (`stafprint.com`), studio de création, d'impression numérique et de formation basé à Porto-Novo, Bénin - depuis 2019.
 
-Tu es un développeur Full-Stack Senior & UI/UX Designer Expert React / TypeScript / Tailwind CSS / Framer Motion / TanStack Router.
-
-Tu dois concevoir et développer une application web multi-pages moderne, fluide et interactive appelée **SPC Roadmap** (`roadmap.stafprint.com`). Elle sert de plateforme publique de transparence, de suivi des développements et de planification pour tout l'écosystème **STAF PRINT CENTER** (basé sur [https://stafprint.com/tools/ecosystem](https://stafprint.com/tools/ecosystem)).
+> L'empreinte de votre succès.
 
 ---
 
-## 🎨 1. DESIGN SYSTEM & CHARTE GRAPHIQUE
+## 📌 Présentation du projet
 
-- **Palette de Couleurs STAF PRINT :**
-  - **Background :** Off-white chaud (`#fdfbf7`) ou Slate très sombre (`#0f172a` / `#020617`) pour le mode sombre.
-  - **Accentuation :** Orange Ambre signature (`#f97316` / `#ea580c`) pour les boutons d'action, indicateurs actifs et badges prioritaires.
-  - **Badges de Statut :**
-    - 💡 *Sous Étude* : Violet / Indigo
-    - 🛠️ *En Développement* : Orange Ambre
-    - 🧪 *En Phase Bêta* : Bleu Cyan
-    - ✅ *Déployé / Lancé* : Vert Émeraude
-- **Typographies :** **Space Grotesk** ou **Fraunces** (Titres), **Inter Tight** (Navigation et textes), **JetBrains Mono** (Badges, dates, sous-domaines).
+La plateforme présente l'activité de STAF PRINT CENTER, valorise ses réalisations et facilite la prise de contact avec les clients, tout en donnant accès à un espace admin, un espace étudiant et des outils dédiés (QR codes, newsletter).
 
----
+Elle s'articule autour des pages suivantes :
 
-## 🗺️ 2. ARCHITECTURE MULTI-PAGES & NAVIGATION (`TanStack Router`)
-
-L'application doit intégrer une navigation multi-pages stricte :
-
-
-roadmap.stafprint.com
-
-├── / --> Page Principale (Explorateur avec Switcher de Vues)
-
-├── /calendar --> Vue / Page Calendrier & Frise Chronologique
-
-├── /features --> Catalogue Général & Recherches Avancées
-
-├── /features/$featureId --> Page Détaillée d'une Fonctionnalité (+ Upvotes & Commentaires)
-
-├── /changelog --> Journal des Notes de Version (Release Notes)
-
-├── /submit --> Formulaire de Proposition d'Idée / Bug
-
-└── /status --> État des Services & Disponibilité Écosystème (Uptime)
-
+- **Accueil** - Présentation du studio, argumentaire (qualité premium, délais courts, prix accessibles, expertise locale), avis Google, formulaire de contact / demande de devis.
+- **Services** (`/services`) - Catalogue des prestations d'impression, de design graphique et d'identité visuelle, filtrable par catégorie.
+- **Réalisations** (`/projects`) - Portfolio des projets clients, filtrable et paginé.
+- **Formations** (`/trainings`) - Programmes de formation (design, web, numérique) avec pré-inscription.
+- **Blog** (`/articles`) - Contenus métiers et actualités du studio.
+- **FAQs** (`/faqs`) - Questions fréquentes.
+- **Offres d'emploi** (`/careers/offers`) - Offres d'emploi, candidatures et demandes de stage.
+- **Contact** (`/#contact`) - Formulaire de demande de devis avec sélection du service souhaité.
+- **Newsletter** (`/tools/newsletter`) - Inscription à la newsletter.
+- **Mentions légales / Confidentialité / CGV** (`/legal/*`).
 
 ---
 
-## 🎛️ 3. FONCTIONNALITES PAR PAGE
+## 🛠️ Stack technique
 
-### A. Page d'Accueil (`/`) : Switcher Tri-Vues (Kanban / Liste / Grille)
-Propose un sélecteur de vue dynamique permettant de basculer instantanément :
-1. 📋 **Vue Kanban (Colonnes) :** 4 colonnes (*Sous Étude*, *En Développement*, *En Bêta*, *Déployé*).
-2. 📜 **Vue Liste :** Format ultra-compact et densifié avec tris rapides (*Plus votés*, *Récents*, *Sous-domaines*).
-3. 🔲 **Vue Grille (Cards) :** Cartes visuelles sous forme de Dashboard avec miniatures, barres de progression (%) et tags.
+- **Frontend :**
+  React + TanStack Router + TanStack Query, décliné sur plusieurs sous-domaines :
+  - `stafprint.com` - site public
+  - `admin.stafprint.com` - back-office (gestion des services, projets, formations, offres, avis clients, bannières/annonces, newsletter)
+  - `student.stafprint.com` - espace étudiant / formations
+  - `go.stafprint.com` - liens courts / QR codes
 
-### B. Page Calendrier & Frise Chronologique (`/calendar`)
-- **Vue Mensuelle & Trimestrielle (Q1, Q2, Q3, Q4) :** Affiche les dates d'échéance et livraisons prévues pour chaque sous-domaine (`ai.stafprint.com`, `student.stafprint.com`, `docs.stafprint.com`, etc.).
-- **Jalons (*Milestones*) & Événements :** Marquage des phases Bêta, ateliers live, et releases majeures.
-- **Filtres par Écosystème :** Masquer/Afficher les événements selon le sous-domaine sélectionné.
+- **Backend :**
+  API REST Laravel 11, PHP 8.4, hébergement mutualisé alwaysdata.
+  Modules principaux : newsletter, avis clients (formulaire dynamique), pré-inscription aux formations, offres d'emploi & candidatures, demandes de stage, annonces/bannières, gestion des QR codes.
 
-### C. Page Détaillée de Fonctionnalité (`/features/$featureId`)
-- **Informations Clés :** Titre, Description complète, Sous-domaine rattaché, Trimestre cible, Progression en %.
-- **Module d'Upvote (+1) :** Bouton interactif pour voter pour la fonctionnalité (enregistré en `localStorage`).
-- **Section Échanges :** Zone de commentaires simulés et fil des mises à jour de la tâche.
+- **Performance & SEO :**
+  - Structure optimisée pour les moteurs de recherche
+  - Metadata Open Graph / Twitter Card
+  - Données structurées Schema.org
+  - Optimisation des ressources statiques (CDN jsDelivr pour les assets)
 
-### D. Journal des Notes de Version (`/changelog`)
-- Timeline chronologique triée par versions (`v1.0`, `v1.2`, `v2.0`).
-- Classification des ajouts : 🚀 *Nouveautés*, ⚡ *Améliorations*, 🐛 *Correctifs*.
-
-### E. Formulaire de Proposition (`/submit`)
-- Saisie d'une nouvelle idée ou bug avec choix de la plateforme rattachée.
-- Ajout automatique dans la liste en statut *Sous Étude*.
-
-### F. État des Services (`/status`)
-- Monitoring visuel de la disponibilité (Uptime %) de chaque sous-domaine de l'écosystème STAF PRINT.
+- **Intégrations :**
+  - Formulaires de contact et de demande de devis (avec sélection de service)
+  - Intégration WhatsApp pour la communication directe
+  - Réseaux sociaux : Facebook, Instagram, LinkedIn, X
 
 ---
 
-## 📊 4. STRUCTURE DES DONNEES (MOCK TYPESCRIPT)
+## 🎯 Objectifs V1
 
-Créer un fichier de mock `featuresData.ts` structuré avec le type suivant :
+- Présenter clairement l'offre STAF PRINT CENTER (print, design, formations)
+- Améliorer la visibilité digitale de l'entreprise
+- Faciliter la génération de prospects via les devis et WhatsApp
+- Valoriser les réalisations, avis clients et l'expertise du studio
+- Centraliser la gestion opérationnelle (back-office admin) et l'espace étudiant
 
-```typescript
-export interface RoadmapFeature {
-  id: string;
-  title: string;
-  description: string;
-  subdomain: 'stafprint.com' | 'docs.stafprint.com' | 'ai.stafprint.com' | 'arcade.stafprint.com' | 'go.stafprint.com' | 'student.stafprint.com' | 'instructor.stafprint.com' | 'customer.stafprint.com';
-  status: 'under-consideration' | 'in-progress' | 'in-beta' | 'completed';
-  category: 'Impression & PAO' | 'Formations' | 'IA & Outils' | 'Gamification' | 'Infrastructure';
-  upvotes: number;
-  progressPercentage: number;
-  targetReleaseDate: string; // ISO string pour le calendrier
-  quarter: 'Q1 2026' | 'Q2 2026' | 'Q3 2026' | 'Q4 2026';
-}
+---
 
+## 📂 Organisation du projet
 
-🎯 LIVRABLE ATTENDU
-
-Génère le code TypeScript / React / Tailwind CSS complet pour STAF Roadmap (roadmap.stafprint.com), incluant TanStack Router pour toutes les routes, le switcher de vues (Kanban, Liste, Grille), la page Calendrier interactive, la page de détails des tâches, le Changelog et le formulaire de soumission.
-***
-NB : Thme sombre et claire (src\hooks\useTheme.tsx avec le clé spc-theme et composant themeToggle)
-***
-Composant pageHeader (fixe sur la page) dynamique selon la page si neccessaire, pageFooter, et roadmapShell pour envelloper dans toutes les pages
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/ee355ecc-a5bc-47cb-94db-c7f76efffed3).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
 ```
+/
+├── apps/
+│   ├── web/          # Frontend public (stafprint.com)
+│   ├── admin/         # Back-office (admin.stafprint.com)
+│   └── student/        # Espace étudiant (student.stafprint.com)
+├── api/               # Backend Laravel 11 (REST API)
+├── packages/
+│   └── shared/         # Types, composants et utilitaires partagés (pattern api-frontend-sync)
+└── public/            # Fichiers publics / assets statiques
+```
+
+---
+
+## 🚀 Déploiement
+
+- Site public : https://stafprint.com
+- Back-office : https://admin.stafprint.com
+- Espace étudiant : https://student.stafprint.com
+- Liens courts / QR codes : https://go.stafprint.com
+
+---
+
+## 📍 Informations
+
+**STAF PRINT CENTER**
+Studio de création & impression
+Porto-Novo, Bénin · Depuis 2019
+
+- 📞 +229 01 66 52 36 39
+- 💬 WhatsApp : +229 01 60 30 06 07
+- ✉️ contact@stafprint.com
+
+> L'empreinte de votre succès.
