@@ -22,12 +22,8 @@ const PAGE_DESC = `Suivi public des développements, jalons et versions de l'éc
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SPC Roadmap — Explorateur de l'écosystème STAF PRINT" },
-      {
-        name: "description",
-        content:
-          "Kanban, liste ou grille : explorez en temps réel toutes les fonctionnalités en étude, en développement, en bêta et déployées chez STAF PRINT CENTER.",
-      },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
       { property: "og:title", content: "SPC Roadmap — Explorateur de l'écosystème STAF PRINT" },
       {
         property: "og:description",
