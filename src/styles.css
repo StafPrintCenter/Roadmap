@@ -1,0 +1,170 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * SPC Roadmap design system — STAF PRINT CENTER.
+ * Warm off-white / deep slate surfaces, signature amber-orange accent,
+ * status colors for the roadmap pipeline.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-deep: var(--primary-deep);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-surface: var(--surface);
+
+  --color-study: var(--study);
+  --color-study-soft: var(--study-soft);
+  --color-dev: var(--dev);
+  --color-dev-soft: var(--dev-soft);
+  --color-beta: var(--beta);
+  --color-beta-soft: var(--beta-soft);
+  --color-done: var(--done);
+  --color-done-soft: var(--done-soft);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.988 0.008 85);
+  --foreground: oklch(0.21 0.03 262);
+  --surface: oklch(0.968 0.012 84);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.03 262);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.21 0.03 262);
+  --primary: oklch(0.705 0.185 47.6);
+  --primary-deep: oklch(0.646 0.192 41.1);
+  --primary-foreground: oklch(0.995 0.005 85);
+  --secondary: oklch(0.955 0.014 84);
+  --secondary-foreground: oklch(0.28 0.035 262);
+  --muted: oklch(0.955 0.012 84);
+  --muted-foreground: oklch(0.53 0.024 262);
+  --accent: oklch(0.94 0.03 70);
+  --accent-foreground: oklch(0.35 0.09 46);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0.003 248);
+  --border: oklch(0.9 0.014 84);
+  --input: oklch(0.9 0.014 84);
+  --ring: oklch(0.705 0.185 47.6);
+
+  --study: oklch(0.55 0.22 277);
+  --study-soft: oklch(0.94 0.04 277);
+  --dev: oklch(0.646 0.192 41.1);
+  --dev-soft: oklch(0.95 0.045 60);
+  --beta: oklch(0.6 0.13 215);
+  --beta-soft: oklch(0.94 0.04 215);
+  --done: oklch(0.58 0.15 162.5);
+  --done-soft: oklch(0.94 0.05 162.5);
+
+  --chart-1: oklch(0.705 0.185 47.6);
+  --chart-2: oklch(0.6 0.13 215);
+  --chart-3: oklch(0.55 0.22 277);
+  --chart-4: oklch(0.58 0.15 162.5);
+  --chart-5: oklch(0.53 0.024 262);
+}
+
+.dark {
+  --background: oklch(0.15 0.028 262);
+  --foreground: oklch(0.97 0.006 248);
+  --surface: oklch(0.196 0.032 263);
+  --card: oklch(0.208 0.034 264);
+  --card-foreground: oklch(0.97 0.006 248);
+  --popover: oklch(0.208 0.034 264);
+  --popover-foreground: oklch(0.97 0.006 248);
+  --primary: oklch(0.735 0.175 48);
+  --primary-deep: oklch(0.68 0.185 43);
+  --primary-foreground: oklch(0.16 0.03 262);
+  --secondary: oklch(0.26 0.035 263);
+  --secondary-foreground: oklch(0.95 0.008 248);
+  --muted: oklch(0.26 0.035 263);
+  --muted-foreground: oklch(0.72 0.026 258);
+  --accent: oklch(0.3 0.05 55);
+  --accent-foreground: oklch(0.93 0.05 70);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.98 0.003 248);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.735 0.175 48);
+
+  --study: oklch(0.72 0.16 277);
+  --study-soft: oklch(0.32 0.09 277);
+  --dev: oklch(0.76 0.16 55);
+  --dev-soft: oklch(0.33 0.09 55);
+  --beta: oklch(0.75 0.12 215);
+  --beta-soft: oklch(0.31 0.07 215);
+  --done: oklch(0.75 0.15 162.5);
+  --done-soft: oklch(0.31 0.07 162.5);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility grid-bg {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--foreground) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--foreground) 6%, transparent) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+@utility glass-panel {
+  background-color: color-mix(in oklab, var(--card) 72%, transparent);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+}
