@@ -24,12 +24,8 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: PAGE_TITLE },
       { name: "description", content: PAGE_DESC },
-      { property: "og:title", content: "SPC Roadmap — Explorateur de l'écosystème STAF PRINT" },
-      {
-        property: "og:description",
-        content:
-          "Suivez la construction de l'écosystème STAF PRINT CENTER : Kanban, liste et grille de toutes les évolutions produit.",
-      },
+      { property: "og:title", content: PAGE_DESC },
+      { property: "og:description", content: PAGE_DESC },
     ],
   }),
   component: Index,
