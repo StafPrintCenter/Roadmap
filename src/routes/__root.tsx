@@ -7,8 +7,8 @@ import { SITE } from "@/data/site";
 import { NotFoundComponent, ErrorComponent } from "@/components/errors";
 import { ThemeProvider } from "@/hooks/useTheme";
 
-const PAGE_TITLE = `SPC Docs ${SITE.name}`;
-const PAGE_DESC = `Documentation officielle de l'écosystème ${SITE.name} : utilisateurs, développeurs et équipe support.`;
+const PAGE_TITLE = `SPC Roadmap | ${SITE.name}`;
+const PAGE_DESC = `Suivi public des développements, jalons et versions de l'écosystème ${SITE.name}.`;
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
