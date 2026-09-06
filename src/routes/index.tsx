@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: PAGE_TITLE },
       { name: "description", content: PAGE_DESC },
-      { property: "og:title", content: PAGE_DESC },
+      { property: "og:title", content: PAGE_TITLE },
       { property: "og:description", content: PAGE_DESC },
     ],
   }),
